@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Background.qml</file>
+        <file>BackgroundForm.ui.qml</file>
+        <file>Group_box.qml</file>
+        <file>Line_edit.qml</file>
+        <file>line_edit_creation.js</file>
+
+ </qresource>
+</RCC>
