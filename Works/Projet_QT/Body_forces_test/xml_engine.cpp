@@ -16,12 +16,14 @@ void Xml_Engine::test()
 QString Xml_Engine::get_node(QString node)
 {
     QDomDocument doc("mydocument");
-    QFile file("/home/ml05682l/Work/Qt_creator_project/Body_forces/setup.xml");
+    QFile file(":/setup.xml");
       if (!file.open(QIODevice::ReadOnly)){
+          std::cout << "Fichier non ouvert" << std::endl;
           return "Le fichier n'a pas pu être ouvert";
       }
       if (!doc.setContent(&file)) {
           file.close();
+
           return "Le fichier n'a pas pu être ouvert";
       }
       file.close();
@@ -35,7 +37,7 @@ QString Xml_Engine::get_node(QString node)
 void Xml_Engine::set_node_text(QString node, QString text)
 {
     QDomDocument doc("mydocument");
-    QFile file("/home/ml05682l/Work/Qt_creator_project/Body_forces/setup.xml");
+    QFile file(":/setup.xml");
       if (!file.open(QIODevice::ReadWrite)){
           return;
       }

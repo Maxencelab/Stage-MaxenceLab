@@ -6,6 +6,6 @@
         <file>Group_box.qml</file>
         <file>Line_edit.qml</file>
         <file>line_edit_creation.js</file>
-
- </qresource>
+        <file>setup.xml</file>
+    </qresource>
 </RCC>
