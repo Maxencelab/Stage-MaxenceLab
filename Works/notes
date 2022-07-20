@@ -1,0 +1,195 @@
+
+
+CMB definir un model avec des dep. l'idée , la logique de comment les potions interagissent n'est pas gerer que dans le code. Active un model de turbulence, tel ou tel champs vont etre crée ou pas, l'IG à une logique, des if un peu partout, pas vraiment pratique. XSD se renseigner sur le XSD. Exemple : regarder CMB et essayer de voir ce qu'on peut faire
+
+A voir si l'outil peut etre utile sur un petit exemple. ou a la main et regarder la diff. 
+
+trois piste pour l'IG : 
+- améliorer pyqt 
+- passer l'ig qtc++, éviter les dep python et inegret des visu 3D avec salome (tres long terme)
+- interface web (test salome) - option qtquick qui se base sur des fichiers XML déclaratif, qui génère les interfaces. 
+
+Comment XSD est utilisable sur les trois points. 
+
+Combinaison PYQT et XSD 
+
+Regarder la génération de XSD. 
+
+Interface graphique: Choix du modèle de turbulence, tel ou tel champs est activé. Regarde comment integré ca en XSD. Si le XSD est propre, beaucoup d'outil pour tester etc. Choix solveur linéaire sous choix. Voir la tete que ca à pour generer un XSD. 
+
+Regarder les interface web
+
+Premier temps : Doc pour generer le XSD et voir comment l'utiliser dans un second temps
+
+QTQuick avec XSD 
+PYQt avec XSD 
+
+
+Réu avec Ivan : 
+
+exemple de truc a faire : 
+
+cs_user_parameters-base : faire un xsd sur ischv - isstpc NVD/TDV mot clef
+
+
+Proxy lign in .gitconfig
+[http]
+    proxy = vip-users.proxy.edf.fr:3128
+[https]
+    proxy = vip-users.proxy.edf.fr:3128
+    sslverify = true
+[https "https://git.forge.pleiade.edf.fr"]
+    proxy = ""
+[https "https://gitlab.pleiade.edf.fr"]
+    proxy = ""
+
+ID git lab : 
+ML05682L
+Baalmax25+
+
+
+12 Mai :
+
+Position = global pour les conditions dans les conditions. 
+Regarder XSD diagram.
+Répétition des champs faisable sous fonction python
+
+Réunion Mercredi Yvan : 
+
+Carte batch integré. Premier patch integré sur le XML. Faie un check box. Pour la velocity mettre une checkbox --> initialisation à 0 
+Mettre un checkbox après chaque scalar dans la combobox species  
+
+
+Truc mineur : Ajd on a expresion symbol example dans le mathematical expression window : quand on a une expression, on a une vue editeur pour chaque paramètre, sans devoir cliquer sur le bouton, avec un bouton pour augmenter la fenetre et afficher l'aide.
+
+Xsdata
+
+"Replacer dans la racine" le scheme_parameter ??
+
+Maintenance existante : Partie Equation parameter - Solver/Scheme/Clipping : Nouveau shéma numérique CDO : Nouvelle colonne CDO, tout les blending factors, flux reconstruction disparait slope test différant.
+
+Evaluer sur 1 semaine : remplacer la partie minidom par Elementtree.
+
+Quand on fait XMLinitNode : On crée plein de truc qui serve a rien: rajouter dans initnode qunad on fait xmladdchild enrichir l'element en rajoutant un attribut, si dans cette element, on lui donne la valeur par défaut, ca permetterai de dire si tout ce qui est dessous. Verifier l'arborescence a la sauvegarde et virer les trucs par défaut 
+
+Dans xmlinitnode, rajouter un default = None, si defaut est renseigné, alors si la valeur est par défaut on peut supprimer le derniere feuille, et revoir l'arborescence d'avant pour checker etc etc. Mettre dico ENUM / Nom affiché et faire le catalogue avec ça. avec doc = nom affiché 
+
+
+D'ici, lundi completer les dev sur l'interace. Exercice de rajouter un ou deux truc. Faire apparaitre Time settings dans le XSD
+
+Note sur minidom :
+
+Afficher des trucs sur un document/element : .toxml()
+Rechercher un noeud : .getElementsbyTagName
+
+note de master en prendre contact avec Constantino. Autre thèse avec EDF SIFRE jumaux numérique surle calcule de la dispersion. 
+
+
+Refaire la page Body forces du GUI c_s avec QML déjà visuelement puis link avec le XML
+
+
+
+Faire une trame de document : 
+Avantage de passer en QML difficulté d'install etc. 
+QML plus productif ? Plus propre ? Ou un truc de plus pour pas beaucoup de changement majeur ? 
+Pistes :
+
+- Est-ce que on peut prendre une page aux hasard en pyqt, avoir une page dont la vues soit faite en qml et pas en python/ui
+- Si on fait une interface web, comment lire/écrire les données.
+
+Interaction QML/Python.
+
+
+Inserer du QML dans l'architecture actuelle dans l'interfac existante 
+-QML remplacer le UI, remplacer le python ou les deux ?
+Comment faire une webapp avec QML (Hello world + interaction avec donné (combo box + print dans un fichier entré sortie etc)
+- Est-ce que ca peut interagir avec le modèle de donnée du python importer 
+
+
+Difficulté d'installation - listing des packages etc 
+
+Transition UI-QML
+
+
+
+
+
+Sur l'utilisation des .ui , .qml et .ui.qml : 
+https://stackoverflow.com/questions/30652537/what-is-the-use-of-the-ui-qml-files-in-qt5-qml
+
+
+Two choice : Widget or QML 
+
+Widget strong for desktop and native looking app while QML works everywhere
+QML : Work on everything (cellphone, desktop ) 
+
+Qt Widget : Designed for desktop application 
+QML : Programming language you use to work with Qt Quick
+QtQuick : Application framwork (control the buttons, the menus etc)
+
+Qml = Qml + QtQuick : Dynamic, fluid and high performence applications : better looking vs Qt Quick 
+
+Widget :
+
++ :
+fast
+native look
+easy c++ integration
+signals and slots
+
+- : 
+feels dated
+hard to follow update (windows macs)
+no/hard anmiation
+Only for desktop (Mac, Linux and Windows) 
+
+QML/QtQuick :
+
++ :
+fast
+easy to animate
+dynamic content
+runs anywhere
+
+- : 
+newer, not fully polished
+steeper learing curve
+small change between version --> bugs
+can be memory consuming
+Installation on Calibre 
+
+in QML, we using a c++ component : QQuickView/QQmlApplicationEngine to see QML files
+
+You can import a QtQuick in a .ui
+
+From : Qt 6 - Episode 27 : Qt widgets vs QML and QtQuick
+
+Comments :  If you aim on mobile/embedded --> Qt Quick/QML
+If main target is desktop : Qt Widget is better
+
+On the web part : from Qt Forum 5/12/14 : Porting a widget application to a web application : 
+"Qt itself does not provide such functonality. There are project [...] QtWui/Wt [..] i don't know the maturity of these project
+
+It seems Qt WebAssembly is a way to go but very low documnetation about webassembly. also from a comments : Qt for pytohn does not yet support webassembly
+
+
+Discussion QML-Qt Widget :
+
+https://stackoverflow.com/questions/8626355/qt-quick-vs-qt-widget
+
+Exemple d'utilisation widget avec QML : 
+
+https://www.ics.com/blog/combining-qt-widgets-and-qml-qwidgetcreatewindowcontainer
+
+
+
+On peut utiliser QtQuick dans un Qwidget avec :
+        self.quickWidget = QQuickWidget(self.centralWidget)
+        self.quickWidget.setObjectName(u"quickWidget")
+        self.quickWidget.setResizeMode(QQuickWidget.SizeRootObjectToView)
+        self.quickWidget.setSource(QUrl(u"file:///home/ml05682l/Work/Qt_creator_project/Body_forces_test/main.qml"))
+
+dans le fichier python generé avec Pyside. Avec PyQt, il existe un module QQuickWidget mais pas dans la version que l'on utilise. Donc pour l'instant inutilisable dans le GUI. 
+
+
+

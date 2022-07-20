@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Code_Saturne_GUI study="Tests" case="test" solver_version="6.0;;7.2-alpha" version="2.0">
+    <additional_scalars/>
+    <analysis_control>
+        <output>
+            <mesh label="Fluid domain" type="cells" id="-1">
+                <all_variables status="on"/>
+                <location>all[]</location>
+                <writer id="-1"/>
+            </mesh>
+            <mesh label="Boundary" type="boundary_faces" id="-2">
+                <all_variables status="on"/>
+                <location>all[]</location>
+                <writer id="-1"/>
+            </mesh>
+            <writer label="results" id="-1">
+                <directory name="postprocessing"/>
+                <format name="ensight" options="separate_meshes"/>
+                <frequency period="none"/>
+                <output_at_end status="on"/>
+                <time_dependency choice="fixed_mesh"/>
+            </writer>
+        </output>
+        <profiles/>
+        <time_averages/>
+        <time_parameters>
+            <property label="CourantNb" name="courant_number"/>
+            <property label="FourierNb" name="fourier_number"/>
+            <time_passing>0</time_passing>
+            <time_step_ref>0.1</time_step_ref>
+        </time_parameters>
+    </analysis_control>
+    <boundary_conditions/>
+    <calculation_management/>
+    <lagrangian model="off"/>
+    <numerical_parameters>
+        <velocity_pressure_algo choice="simplec"/>
+    </numerical_parameters>
+    <physical_properties>
+        <fluid_properties>
+            <property label="Density" name="density" choice="constant">
+                <initial_value>1.17862</initial_value>
+                <listing_printing status="off"/>
+                <postprocessing_recording status="off"/>
+            </property>
+            <property label="DiffDyn" name="dynamic_diffusion" choice="constant">
+                <initial_value>0.01</initial_value>
+                <listing_printing status="off"/>
+                <postprocessing_recording status="off"/>
+            </property>
+            <property label="LamVisc" name="molecular_viscosity" choice="constant">
+                <initial_value>1.83e-05</initial_value>
+                <listing_printing status="off"/>
+                <postprocessing_recording status="off"/>
+            </property>
+            <property label="SurfTen" name="surface_tension" choice="constant">
+                <initial_value>0</initial_value>
+                <listing_printing status="off"/>
+                <postprocessing_recording status="off"/>
+            </property>
+        </fluid_properties>
+        <gravity>
+            <gravity_x>8</gravity_x>
+            <gravity_y>10</gravity_y>
+            <gravity_z>5</gravity_z>
+        </gravity>
+        <notebook/>
+        <omega>
+            <omega_x>5</omega_x>
+            <omega_y>10</omega_y>
+            <omega_z>5</omega_z>
+        </omega>
+    </physical_properties>
+    <solution_domain>
+        <volumic_conditions>
+            <zone head_losses="off" thermal_source_term="off" momentum_source_term="off" label="all_cells" physical_properties="on" solid="off" groundwater_law="off" id="1" porosity="off" scalar_source_term="off" initialization="on">all[]</zone>
+        </volumic_conditions>
+    </solution_domain>
+</Code_Saturne_GUI>
