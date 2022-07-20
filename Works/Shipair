@@ -1,0 +1,57 @@
+On se préoccupe de plus en plus de l'impact environnemental du transport maritime : Oil spills, air quality in port area. Emission de NOx SOx et PM (nitrogen oxides, sulphur, and particulate matter (Particules en suspension)).
+
+La pollution de l'air est le premier facteur sanitaire environnemental, les PM fines en particulier sont a priori la pollution l'a plus grave particulièrement les PM2.5
+
+Les régulations de sont pas encore très restrictive surtout pour les PM fines et l'impact des bateaux sur la qualité de l'air est encore mal compris, le transport martitime participe fortement à l'économie (difficulté de régulé), èsles zones portuaires, le transport pourrait représenter autant que le traffic routier for NOx SO2 and PM. Les polluants peuvent réagir avec l'atmosphere et generer de second polluant plus dangereux --> Depuis 2020, de nouvelle règle concernant le contenue en sulhpure dans le fuel (FSC) limité à 0.5%
+
+PM10 and PM2.5 ne sont pas encore régulé mais devrait diminuer avec le fuel low sulphur. Les trace de métaux dnas la combustion peuvent également avoir un effet nefaste sur la santé. 
+
+Beaucoup de recherche doivent etre fite pour comprendre les impacts des régulations et des émissions par les bateaux. En premier les émissions en zone portuaire car elles ont le plus gros impact sur al qualité de l'air. 
+
+4 querstions se posent pour SHIPAIR : 
+
+Quels sont précisément les composés émis par les navires ?
+
+- Quantifier les poolluants régulé (SO2) ou non-régulé (NOx,Black carbon, CO, CO2 et PM2.5)
+- || les emissions de VOC/IVOCs (volatile organic and intermediate volatility)
+- Jeu de donnés des émissions de navires dans les ports francais
+
+Destin des émissions dans l'atmosphère ? 
+
+- SO2 contrinbution to new partcl formation in port area/city
+- modeling framework for their impact on AQ 
+- Future scenarios to support legislation
+
+Potentiel oxidatif des émissions ?
+
+- Determiner the potentiel oxidatif intriseque 
+- Lien entre OP/metaux/oxidized organic mesurée
+- Contribution dans les zones urbaines portuaire en comparaison avec d'autre zone
+
+
+
+Le projet combine à la fois experimental et modélisation numérique et est organisé en 5 taches : 
+
+- Base de donné d'observation dans le port de Dunkerque (campagne d'obs)
+- Mesure de l'impact à long terme et du destin des émissions dans la zone urbaine Marseille-Longchamps
+- Nouveau cadre pour la modélisation numérique en considérant 3 zones portuaires (Dunkerque, Marseille et Le Havre) en s'appuyant sur l'expertise de la qualité de l'air dans ses régions 
+
+
+
+LE DOCTORAT (WP4) : 
+Les modèles deterministes représentes le transport et le destin des polluants dans l'atmo et sont cruciaux pour renforcer les campagnes d'observations. De plus elle permettent de simuler les emissions dans le cas de stratégie de diminution avec des régulations. Plusieurs études ont déjà été réalisées depuis les 10 dernières années mais souvent avec le point de vue contnental ou régional (très grand). Plus récemment des études ont été faite à echelle urbaines et sont beaucoup plus relevent pour l'impact sanitaire. Cependant, les modèles utilisés sont souvent très simplifié pour la chimie atmo et l'aerosol dynamics qui ne represente pas bien l'ageing des paritcules dans les panaches et l'évolution en taille de la distribution de popoulation des partcle. Ces modèles ne permettent pas une représentation accurate des PM ultra fine et de la composition chimique. 
+
+Modelling challenge of primary and secondary particules dans les panaches de navire dans les zones urbaine. 
+
+- New dispersion modeling framework
+- Add an explicit treatment of the metallic compounds
+- Evaluation des ces nouveaux model et leurs fonctionnalité en comparaison aux campagnes d'obs
+
+
+
+Le nouveaux model sera basé sur le coulage de deux approches multi echelle : Plume-in-grid (punctual source) et street-in-grid (dispersion in build envirionnement)
+Modèle eulerien régional provide backgrnd concentration couplé avec un modèle de bouffée gaussienne : Dev d'une nouvel algo pour décrire les échanges entre les deux modèles
+
+Amélioration du modèle SSH-aerosol pour inclure un traitement explicit des composé métallique pour lesquel l'inventaire sera disponible. Les métaux sont traités comme des scalaire passifs mais leurs ditributions sera influencé par la dynamique des aerosols preoccess (condensation/evaporation/coagulation). Ca devrait améliorer le nombre de polluant pour l'évaluation du nouveau modèle.
+
+Enfin : Implémentation et évalution du nouveau modèle dans les différantes zone urbaine. En utilisant les deux campagens précedentes et dans les trois zones Dunk, mars et LH
